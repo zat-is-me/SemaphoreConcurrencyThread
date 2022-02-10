@@ -40,13 +40,13 @@ class Connection {
         }
 
         try{
-            deConnect();
+            doConnect();
         }finally {
             semaphore.release();
         }
     }
 
-    public void deConnect(){
+    public void doConnect(){
         synchronized (this){
             connections++;
             System.out.println("connected ... " + connections);
